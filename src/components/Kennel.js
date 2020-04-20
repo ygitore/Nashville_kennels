@@ -1,6 +1,12 @@
 import React from "react"
 import Animal from "./animal/Animal"
-import "./Animal.css"
+import "./animal/Animal.css"
+import Customer from './customer/Customer'
+import './customer/Customer.css'
+import Employee from './employee/Employee'
+import './employee/Employee.css'
+import Location from './location/Location'
+import './location/Location.css'
 
 export default () => (
     <>
@@ -17,6 +23,21 @@ export default () => (
             <Animal />
             <Animal />
             <Animal />
+        </article>
+        <article className="customers">
+            <Customer />
+            <Customer />
+            <Customer />
+        </article>
+        <article className="employees">
+            <Employee />
+            <Employee />
+            <Employee />
+        </article>
+        <article className="locations">
+            <Location />
+            <Location />
+            <Location />
         </article>
     </>
 )
