@@ -11,6 +11,9 @@ import { LocationProvider } from "./location/LocationProvider"
 import LocationList from './location/LocationList'
 import EmployeeList from "./employee/EmployeeList"
 import { EmployeeProvider } from "./employee/EmployeeProvider"
+import {CustomerProvider} from './customer/CustomerProvider'
+import CustomerList from "./customer/CustomerList"
+
 
 export default () => (
     <>
@@ -28,14 +31,15 @@ export default () => (
             <Animal />
             <Animal />
         </article>
-        <article className="customers">
-            <Customer />
-            <Customer />
-            <Customer />
-        </article>
+        <h2>Customers</h2>
+        <CustomerProvider>
+            <CustomerList />
+        </CustomerProvider>
+        <h2>Employees</h2>
         <EmployeeProvider>
             <EmployeeList />
         </EmployeeProvider>
+        <h2>Locations</h2>
         <LocationProvider>
             <LocationList />
         </LocationProvider>
