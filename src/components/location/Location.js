@@ -1,7 +1,8 @@
 import React from "react"
 
-export default () => (
+export default ({ location }) => (
     <section className="location">
-        <h3 className="location">123 abc st</h3>
+        <h3 className="location__name">{location.name}</h3>
+        <address className="location__address">{location.address}</address>
     </section>
 )
