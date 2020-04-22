@@ -1,12 +1,5 @@
 import React from "react"
 import AnimalList from "./animal/AnimalList"
-import "./animal/Animal.css"
-import Customer from './customer/Customer'
-import './customer/Customer.css'
-import Employee from './employee/Employee'
-import './employee/Employee.css'
-import Location from './location/Location'
-import './location/Location.css'
 import { LocationProvider } from "./location/LocationProvider"
 import LocationList from './location/LocationList'
 import EmployeeList from "./employee/EmployeeList"
