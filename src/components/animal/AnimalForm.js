@@ -11,13 +11,13 @@ export default props => {
     const location = useRef()  
     const addNewAnimal = () => {
         const customerId = localStorage.getItem("kennel_customer")
-        if(customerId){
-            addAnimal({
-                name: animalName.current.value,
-                breed: animalBreed.current.value,
-                customerId: customerId.current.value
-            }).then(props.toggler)
+        const newAnimal = {
+            name: animalName.current.value,
+            breed: animalBreed.current.value,
+            customerId: parseInt(customerId),
+            locationId: parseInt(location.current.value)
         }
+        addAnimal(newAnimal).then(props.toggler)
     }
     return (
         <form>
@@ -45,10 +45,10 @@ export default props => {
                 {
                     locations.map(loc => {
                         return <option key = {loc.id} value = {loc.id}>{loc.name}</option>
-                    }).join("")
+                    })
                 }
             </select>
-            <Button onClick = {evt => {
+            <Button type = "submit" onClick = {evt => {
                 evt.preventDefault()
                 addNewAnimal()
             }} >Save animal</Button>
