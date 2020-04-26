@@ -11,21 +11,24 @@ export default () => {
     const { locations } = useContext(LocationContext)
 
     return (
-        <div className="animals">
-        {
-            animals.map(
-                anima => {
-                    const owner = customers.find(customer => customer.id === anima.customerId)
-                    const clinic = locations.find(location => location.id === anima.locationId)
+        <>
+            <h2>Animals</h2>
+            <div className="animals">
+            {
+                animals.map(
+                    anima => {
+                        const owner = customers.find(customer => customer.id === anima.customerId)
+                        const clinic = locations.find(location => location.id === anima.locationId)
 
-                    return <Animal key={anima.id} 
-                        animal ={anima} 
-                        customer = {owner} 
-                        location = {clinic} />
-                }
-            )
+                        return <Animal key={anima.id} 
+                            animal ={anima} 
+                            customer = {owner} 
+                            location = {clinic} />
+                    }
+                )
 
-        }
-        </div>
+            }
+            </div>
+        </>
     )
 }
