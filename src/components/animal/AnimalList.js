@@ -1,14 +1,18 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import { AnimalContext } from "./AnimalProvider"
 import Animal from "./Animal"
 import "./Animal.css"
 import { CustomerContext } from "../customer/CustomerProvider"
 import { LocationContext } from "../location/LocationProvider"
+import { Modal, Button, ModalHeader, ModalBody } from "reactstrap"
+import AnimalForm from "./AnimalForm"
 
 export default () => {
     const { animals } = useContext(AnimalContext)
     const { customers } = useContext(CustomerContext)
     const { locations } = useContext(LocationContext)
+    const [modal, setModal] = useState(false)
+    const toggle = () => setModal(!modal)
 
     return (
         <>
