@@ -17,8 +17,7 @@ export default () => {
     return (
         <>
             <h2>Animals</h2>
-            <div className="animal_Form_link" onClick = {toggle}>Add new animal</div>
-            <div className="animals">            
+            <div className="animals">
             {
                 animals.map(
                     anima => {
@@ -31,16 +30,9 @@ export default () => {
                             location = {clinic} />
                     }
                 )
+
             }
             </div>
-            <Modal isOpen = {modal} toggle = {toggle}>
-                <ModalHeader toggle ={toggle}>
-                    <h4>New Animal</h4>
-                </ModalHeader>
-                <ModalBody>
-                    <AnimalForm toggler = {toggle} />
-                </ModalBody>
-            </Modal>
         </>
     )
 }

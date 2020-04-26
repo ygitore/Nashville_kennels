@@ -18,7 +18,7 @@ export default () => {
                 customers.map(cust => <Customer key={cust.id} customer ={cust} />)
             }
             </div>
-            <Modal isOpen = {modal} toggle = {setModal}>
+            <Modal isOpen = {modal} toggle = {toggle}>
                 <ModalHeader toggle = {toggle}>
                     <div>New Customer</div>
                 </ModalHeader>
