@@ -4,7 +4,6 @@ import LocationList from "./location/LocationList"
 import { EmployeeProvider } from "./employee/EmployeeProvider"
 import EmployeeList from "./employee/EmployeeList"
 import { AnimalProvider } from "./animal/AnimalProvider"
-import AnimalList from "./animal/AnimalList"
 import { CustomerProvider } from "./customer/CustomerProvider"
 import CustomerList from "./customer/CustomerList"
 import { SearchBar } from "./search/SearchBar"
@@ -31,7 +30,6 @@ export const Dashboard = () => {
                                 <LocationList />
                                 <CustomerList />
                                 <EmployeeList />
-                                <AnimalList />
                             </div>
                         </LocationProvider>
                     </EmployeeProvider>
