@@ -3,11 +3,11 @@ import { AnimalContext } from "../animal/AnimalProvider"
 import  Animal from "../animal/Animal"
 import { CustomerContext } from "../customer/CustomerProvider"
 import { LocationContext } from "../location/LocationProvider"
-import { Modal, ModalHeader, ModalBody } from "reactstrap"
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap"
 
 
 export const SearchResults = ({ searchTerms }) => {
-    const { animals } = useContext(AnimalContext)
+    const { animals, releaseAnimal } = useContext(AnimalContext)
     const { customers } = useContext(CustomerContext)
     const { locations } = useContext(LocationContext)
 
@@ -45,13 +45,19 @@ export const SearchResults = ({ searchTerms }) => {
             </div>
 
             <Modal isOpen={modal} toggle={toggle}>
-                <ModalHeader toggle={toggle}>
-                    { selectedAnimal.animal.name }
-                </ModalHeader>
-                <ModalBody>
-                    <Animal key={selectedAnimal.animal.id} {...selectedAnimal} />
-                </ModalBody>
-            </Modal>
+            <ModalHeader toggle={toggle}>
+                { selectedAnimal.animal.name }
+            </ModalHeader>
+            <ModalBody>
+                <Animal key={selectedAnimal.animal.id} {...selectedAnimal} />
+            </ModalBody>
+            <ModalFooter>
+                <Button color="danger" onClick={() => {
+                    releaseAnimal(selectedAnimal.animal.id)
+                    toggle()
+                }}>Delete</Button>
+            </ModalFooter>
+        </Modal>
         </div>
     )
 }
